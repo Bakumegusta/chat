@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Chatbot| Baku Manson</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="https://unpkg.com/rivescript@latest/dist/rivescript.min.js"></script>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<div class="container">
+	<audio id="sound">
+		<source src="asset/sound.mp3" type="audio/ogg">
+	  </audio>
+	  <audio id="sound2">
+		<source src="asset/sound3.mp3" type="audio/ogg">
+	  </audio>
+    <div class="col-md-12 col-lg-6">
+        <div class="panel">
+        	<!--Heading-->
+    		<div class="panel-heading">
+    			<!-- <h3 class="panel-title">Mr Baku(Bot)</h3> -->
+    		</div>
+    
+    		<!--Widget body-->
+    		<div id="demo-chat-body" class="collapse in">
+    			<div class="nano has-scrollbar" style="height:380px">
+    				<div class="nano-content pad-all" tabindex="0" style="right: -17px;">
+    					<ul class="list-unstyled media-block">  						
+							<!-- <li class="mar-btm">
+    							<div class="media-body pad-hor">
+    								<div class="speech">
+    									<p>Hello! Iam Mr. Baku</p>
+    								</div>
+    							</div>
+							</li>
+							<li class="mar-btm">
+    							<div class="media-body pad-hor">
+    								<div class="speech">
+    									<p>Ask me some questions</p>
+    								</div>
+    							</div>
+							</li>	 -->
+				
+							<div class="list-group">
+								<p class="option">What is your name?</p>
+								<p  class="option">What is bot?</p>
+								<p  class=" option">what is icrewsystem?</p>
+							  </div>
+							<!--apeend caht  -->
+    						<span id="parent"></span>
+    					</ul>
+    				</div>
+    			<div class="nano-pane"><div class="nano-slider" style="height: 141px; transform: translate(0px, 0px);"></div></div></div>  
+    			<!--Widget footer-->
+    			<div class="panel-footer">
+    				<div class="row">
+    					<div class="col-xs-9 chat-input">
+    						<input type="text"  id ="chat-input" placeholder="Enter your text here..." class="form-control chat-input">
+    					</div>
+    					<div class="col-xs-3 submit">
+    						<button class="btn btn-primary btn-block " id="submit" type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+</div>
+
+
+
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="main.js">
+	
+</script>
+</body>
+</html>
