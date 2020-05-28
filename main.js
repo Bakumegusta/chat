@@ -19,7 +19,11 @@ $(document).ready(function() {
     })
     
     var bot = new RiveScript();
-        bot.loadFile("main.rive").then(loading_done).catch(loading_error);
+        bot.loadFile([
+            "main.rive",
+         "asset/brain/test.rive",
+            "asset/brain/standard.rive",
+          ]).then(loading_done).catch(loading_error);
         //  chat bot ready
         function loading_done() {
             console.log('chatbot ready');
