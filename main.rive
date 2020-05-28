@@ -1,6 +1,7 @@
 + hello 
 - Hello human.
-
++ good *
+- <set name=<formal>>good <get name>.
 + my name is *
 - <set name=<formal>>Nice to meet you, <get name>.
 
@@ -48,3 +49,7 @@
 - thank you ;)
 +(what is icrewsystem|icrewsystem)
 - very nice company. but i dont know much <a href="https://icrewsystems.com/en/" target= _blank> click here</a> to know more about them.
++(how are you)
+- I am doing well.
+- I am fine thank you.
+- I am good .

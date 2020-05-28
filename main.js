@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    $('.alert').hide();
     function updateScroll(){
         var element = document.querySelector(".nano-content");
         element.scrollTop = element.scrollHeight;
@@ -33,7 +34,8 @@ $(document).ready(function() {
     function chat() {  
         var chatinput = document.querySelector('#chat-input').value;  
          console.log(chatinput);
-        let username = "local-user";
+        if(chatinput != ''){
+            let username = "local-user";
         bot.reply(username, chatinput).then(function(reply) {
             console.log("The bot says: " + reply);
 
@@ -73,6 +75,15 @@ $(document).ready(function() {
         // reset input field
         document.querySelector('#chat-input').value='';
         });
+        }else{
+            $('.alert').show();
+            setTimeout(function(){
+            $('.alert').hide();
+                
+                },3000);
+
+        }
+        
     }
 
     function chaton(ask) {  
