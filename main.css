@@ -1,6 +1,7 @@
 *{
     border-style: none !important;
 }
+
 html {
     scroll-behavior: smooth;
   }
@@ -83,7 +84,7 @@ body{
     width: auto;
 }
 .pad-hor {
-    padding-left: 15px;
+    padding-left: 0px;
     padding-right: 15px;
 }
 .speech {
@@ -130,7 +131,7 @@ body{
     text-align: right;
 }
 .pad-hor {
-    padding-left: 15px;
+    padding-left: 0px;
     padding-right: 15px;
 }
 .speech-right>.speech {
@@ -212,6 +213,7 @@ a:hover{
 #submit{
     background: linear-gradient(135deg, rgb(48, 71, 236) 0%, rgb(15, 34, 167) 100%);
     color: white;
+    border-radius: 20px;
 }
 .chat-input{
     padding-right: 0px !important;
@@ -221,4 +223,29 @@ a:hover{
 }
 p{
     margin: 0px 0 0px;
+}
+.mainbot{
+    width: 100px;
+}
+.botheading{
+    margin-left: 30px;
+   
+}
+.botheading h4{
+    line-height: 1.5em;
+}
+.shut{
+    font-size: 40px;
+    float: right;
+    margin-right: 20px;
+    margin-top: 15px;
+}
+.hello{
+    color: #ffc950;
+    font-family: cursive;
+}
+.companyname{
+    color: #00e7ff;
+    font-weight: bold;
+    font-family: monospace;
 }

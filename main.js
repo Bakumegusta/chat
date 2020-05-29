@@ -1,5 +1,6 @@
 $(document).ready(function() {
     $('.alert').hide();
+    // scroll down
     function updateScroll(){
         var element = document.querySelector(".nano-content");
         element.scrollTop = element.scrollHeight;
@@ -21,8 +22,9 @@ $(document).ready(function() {
     var bot = new RiveScript();
         bot.loadFile([
             "main.rive",
-         "asset/brain/test.rive",
             "asset/brain/standard.rive",
+         "asset/brain/test.rive",
+
           ]).then(loading_done).catch(loading_error);
         //  chat bot ready
         function loading_done() {
@@ -58,6 +60,9 @@ $(document).ready(function() {
 
    			 `;
         bot.innerHTML = `
+                                <div class="media-left">
+                                    <img src="asset/images/bot.png" class="img-circle img-sm" alt="Profile Picture">
+                                </div>
     							<div class="media-body pad-hor">
     								<div class="speech">
     									<p>${reply}</p
@@ -68,7 +73,6 @@ $(document).ready(function() {
         console.log(query);
         parent.appendChild(query);   
         updateScroll();
-
         x.play();
         setTimeout(function(){
             parent.appendChild(bot);
@@ -102,6 +106,7 @@ $(document).ready(function() {
         bot.setAttribute('class', 'mar-btm');
         query.setAttribute('class', 'mar-btm');
         query.innerHTML = `
+                               
     							<div class="media-body pad-hor speech-right">
     								<div class="speech">
     									<p>${ask}</p>
@@ -110,6 +115,9 @@ $(document).ready(function() {
 
    			 `;
         bot.innerHTML = `
+                                <div class="media-left">
+                                    <img src="asset/images/bot.png" class="img-circle img-sm" alt="Profile Picture">
+                                </div>
     							<div class="media-body pad-hor">
     								<div class="speech">
     									<p>${reply}</p
