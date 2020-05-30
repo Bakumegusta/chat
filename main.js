@@ -39,14 +39,17 @@ $(document).ready(function() {
 
     submit.addEventListener('click', chat);
     function chat() {  
-          setTimeout(function(){
-            $('#typing').show();     
-            updateScroll();
-            },500);
+         
 
         var chatinput = document.querySelector('#chat-input').value;  
          console.log(chatinput);
         if(chatinput != ''){
+            // typing
+            setTimeout(function(){
+                $('#typing').show();     
+                updateScroll();
+                },500);
+                
             let username = "local-user";
         bot.reply(username, chatinput).then(function(reply) {
             console.log("The bot says: " + reply);
