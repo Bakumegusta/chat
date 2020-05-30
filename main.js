@@ -1,5 +1,6 @@
 $(document).ready(function() {
     $('.alert').hide();
+    $('#typing').hide();
     // scroll down
     function updateScroll(){
         var element = document.querySelector(".nano-content");
@@ -10,7 +11,7 @@ $(document).ready(function() {
     var x = document.getElementById("sound"); 
     var y = document.getElementById("sound2"); 
     options.forEach(function(option){
-        console.log(option);
+        // console.log(option);
         option.addEventListener('click',function(e){
             var ask = e.target.textContent;
             console.log(ask);
@@ -23,7 +24,7 @@ $(document).ready(function() {
         bot.loadFile([
             "main.rive",
             "asset/brain/standard.rive",
-         "asset/brain/test.rive",
+             "asset/brain/test.rive",
 
           ]).then(loading_done).catch(loading_error);
         //  chat bot ready
@@ -38,6 +39,11 @@ $(document).ready(function() {
 
     submit.addEventListener('click', chat);
     function chat() {  
+          setTimeout(function(){
+            $('#typing').show();     
+            updateScroll();
+            },500);
+
         var chatinput = document.querySelector('#chat-input').value;  
          console.log(chatinput);
         if(chatinput != ''){
@@ -61,7 +67,7 @@ $(document).ready(function() {
    			 `;
         bot.innerHTML = `
                                 <div class="media-left">
-                                    <img src="asset/images/bot.png" class="img-circle img-sm" alt="Profile Picture">
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="img-circle img-m" alt="Profile Picture">
                                 </div>
     							<div class="media-body pad-hor">
     								<div class="speech">
@@ -78,7 +84,8 @@ $(document).ready(function() {
             parent.appendChild(bot);
             y.play();
             updateScroll();
-            },2000);
+            $('#typing').hide();
+            },3000);
 
         // reset input field
         document.querySelector('#chat-input').value='';
@@ -86,8 +93,7 @@ $(document).ready(function() {
         }else{
             $('.alert').show();
             setTimeout(function(){
-            $('.alert').hide();
-                
+            $('.alert').hide();             
                 },3000);
 
         }
@@ -95,6 +101,11 @@ $(document).ready(function() {
     }
 
     function chaton(ask) {  
+        setTimeout(function(){
+            $('#typing').show();
+            updateScroll();
+            },500);
+
         let username = "local-user";
         bot.reply(username, ask).then(function(reply) {
             console.log("The bot says: " + reply);
@@ -116,7 +127,7 @@ $(document).ready(function() {
    			 `;
         bot.innerHTML = `
                                 <div class="media-left">
-                                    <img src="asset/images/bot.png" class="img-circle img-sm" alt="Profile Picture">
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="img-circle img-m" alt="Profile Picture">
                                 </div>
     							<div class="media-body pad-hor">
     								<div class="speech">
@@ -134,12 +145,22 @@ $(document).ready(function() {
             parent.appendChild(bot);
             y.play();
             updateScroll();
-            },2000);
+            $('#typing').hide();
+            },3000);
 
         // reset input field
         document.querySelector('#chat-input').value='';
         });
     }
+
+
+    // enter key
+    window.addEventListener('keypress', function (e) {
+        if (e.keyCode == 13) {
+            // chars.push(e.key);         
+            chat();
+        }
+    }, false);
 
 
 });

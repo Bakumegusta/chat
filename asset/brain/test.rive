@@ -12,13 +12,31 @@
 	- {ok}
 < begin
 
+// The Botmaster's Name
+! var master = Smash
+
 // Bot Variables
-// ! var name     = RiveScript Test Bot
-// ! var age      = 9000
-// ! var gender   = androgynous
-// ! var location = Cyberspace
-// ! var phone    = 555-1234
-// ! var email    = test@mydomain.com
+! var name     = Baku
+! var fullname = Baku megusts
+! var age      = 90000000
+! var birthday = October 12
+! var sex      = male
+! var location = GTA
+! var city     = Detroit
+! var eyes     = blue
+! var hair     = light brown
+! var hairlen  = short
+! var color    = blue
+! var band     = Nickelback
+! var book     = Myst
+! var author   = Stephen King
+! var job      = robot
+! var website  = www.smash.com
+! var age      = 9000
+! var gender   = Alpha male
+! var location = Cyberspace
+! var phone    = 20002000
+! var email    = bakumegusta@gmail.com
 
 // Substitutions
 ! sub +         = plus
@@ -206,7 +224,7 @@
                    You alright?
    Expected reply: I'm fine, thanks for asking.
 */
-+ (are you|you) (okay|alright)
++ (are you|you) (okay|alright|ok)
 - I'm fine, thanks for asking.
 
 /* Optionals

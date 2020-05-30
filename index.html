@@ -23,10 +23,9 @@
         <div class="panel">
         	<!--Heading-->
     		<div class="panel-heading">
-				<i class="far fa-caret-square-down shut"></i>
-				<img src="asset/images/bot.png" class="mainbot" alt="Profile Picture">
-				<div class="botheading">
-					<h4 > <span class="hello">Hello!</span> <i class="fas fa-praying-hands"></i><br> Welcome to  <span class="companyname">icrewsystems</span></h4>
+				<i class="fas fa-times shut"></i>
+				<div class="avatar">
+					<img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="img-circle img-sm mr-3 " alt="Profile Picture">  <span class="botname">Baku</span>
 				</div>
     		</div> 
     		<!--Widget body-->
@@ -34,28 +33,43 @@
     			<div class="nano has-scrollbar" style="height:380px">
     				<div class="nano-content pad-all" tabindex="0" style="right: -17px;">
     					<ul class="list-unstyled media-block">  						
-							<!-- <li class="mar-btm">
+							<li class="mar-btm">
+								<div class="media-left">
+    								<img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="img-circle img-m" alt="Profile Picture">
+    							</div>
     							<div class="media-body pad-hor">
     								<div class="speech">
-    									<p>Hello! Iam Mr. Baku</p>
+    									<p> Hello!  <i class="fas fa-praying-hands"></i><br> Welcome to  <strong style="color: rgb(184, 30, 125);">icrewsystems</strong> </p>
     								</div>
     							</div>
 							</li>
 							<li class="mar-btm">
+								<div class="media-left">
+    								<img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="img-circle img-m" alt="Profile Picture">
+    							</div>
     							<div class="media-body pad-hor">
     								<div class="speech">
-    									<p>Ask me some questions</p>
+    									<p>Can I help with with something?</p>
     								</div>
     							</div>
-							</li>	 -->
-				
+							</li>	
 							<div class="list-group">
-								<p class="option">What is your name?</p>
-								<p  class="option">What is bot?</p>
-								<p  class=" option">what is icrewsystems?</p>
+								<li class="option">What is your name?</li>
+								<li  class="option">What is bot?</li>
+								<li  class=" option">what is icrewsystems?</li>
 							  </div>
 							<!--apeend caht  -->
-    						<span id="parent"></span>
+							<span id="parent"></span>
+							<li class="mar-btm" id="typing">
+								<div class="media-left">
+    								<img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="img-circle img-m" alt="Profile Picture">
+    							</div>
+    							<div class="media-body pad-hor">
+    								<div class="speech">
+    									<p>Typing ....</p>
+    								</div>
+    							</div>
+							</li>
     					</ul>
     				</div>
     			<div class="nano-pane"><div class="nano-slider" style="height: 141px; transform: translate(0px, 0px);"></div></div></div>  
@@ -64,7 +78,7 @@
     			<div class="panel-footer">
     				<div class="row">
     					<div class="col-xs-9 chat-input">
-    						<input type="text"  id ="chat-input" placeholder="Enter your text here..." class="form-control chat-input" required>
+    						<input type="text"  id ="chat-input" placeholder="Enter your text here..." class="form-control chat-input" autofocus>
     					</div>
     					<div class="col-xs-3 submit">
     						<span class="btn btn-primary btn-block " id="submit" type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></span>
