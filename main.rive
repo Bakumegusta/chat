@@ -1,10 +1,16 @@
 
 + good *
 - <set name=<formal>>good <get name>.
-+ (what is bot|what is ai)
-- Like human it can response user questions.
++ icrew v4 products
+- Are you looking to start a new Virtual Airline?{topic=newva}
+> topic newva
+ + no
+ - Are you an existing Virtual Airline and want to upgrade to iCrew v4?{topic=va}
+  + *
+ -  Are you looking to start a new Virtual Airline?
+ < topic
 
-+ (you are nice|i like you)
-- thank you ;)
-+(what is icrewsystems|icrewsystems)
-- very nice company. but i dont know much <a href="https://icrewsystems.com/en/" target= _blank> click here</a> to know more about them.
+ > topic va
+ + no
+ - Are you looking to start a new Virtual Airline?{topic=newva}
+ < topic
