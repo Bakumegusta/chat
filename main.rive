@@ -1,22 +1,44 @@
 
 + good *
 - <set name=<formal>>good <get name>.
-+ icrew v4 products
-- Are you looking to start a new Virtual Airline?{topic=newva}
-^ <li class="option yesno" id="yes">Yes</li>
-^ <li class="option yesno">No</li>
-> topic newva
-+ no
-- Are you an existing Virtual Airline and want to upgrade to iCrew v4?{topic=va}
-^ <li class="option yesno">Yes</li>
-^ <li class="option yesno">No</li>
-+ yes{weight=100}
-- {topic=random}Thank you!
- < topic
+// + icrew v4 products
+// - Are you looking to start a new Virtual Airline?{topic=newva}
+// ^ <li class="option yesno" id="yes">Yes</li>
+// ^ <li class="option yesno">No</li>
+// > topic newva
+// + no
+// - Are you an existing Virtual Airline and want to upgrade to iCrew v4?{topic=va}
+// ^ <li class="option yesno">Yes</li>
+// ^ <li class="option yesno">No</li>
+// + yes{weight=100}
+// - {topic=random}Thank you!
+//  < topic
 
- > topic va
-+ yes{weight=100}
-- please share your name
-+ no{weight=100}
-- {topic=random}Quitter!
- < topic
+//  > topic va
+// + yes{weight=100}
+// - please share your name
+// + no{weight=100}
+// - {topic=random}Quitter!
+//  < topic
+
+
++ icrew v4 products
+- Are you looking to start a new Virtual Airline?
++ yes
+% are you looking to start a new virtual airline
+- Do you have a domain?
++ no
+% are you looking to start a new virtual airline
+- Are you an existing Virtual Airline and want to upgrade to iCrew v4?
++ (yes|no)
+% do you have a domain
+- do you have  hosting?
++ (yes|no)
+% do you have hosting
+- Do you have SmartCars?
++ (yes|no)
+% do you have smartcars
+- what is the expected delivery
++ (3 weeks|3 months|6 months|9 months)
+% what is the expected delivery
+- thank you :) we will get in touch with you shortly.

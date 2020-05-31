@@ -8,6 +8,7 @@ $(document).ready(function() {
         element.scrollTop = element.scrollHeight;
     }
     var requrementform = false;
+    var delivery = 'what is the expected delivery';
     var submit = document.querySelector('#submit');
     var options = document.querySelectorAll('.option');
     var x = document.getElementById("sound"); 
@@ -44,7 +45,7 @@ $(document).ready(function() {
         // event call
     submit.addEventListener('click', chat);
     function chat() {  
-        var chatinput = document.querySelector('#chat-input').value;  
+        var chatinput = document.querySelector('#chat-input').value;
          console.log(chatinput);
         if(chatinput != ''){
             // typing
@@ -70,7 +71,8 @@ $(document).ready(function() {
     								</div>
     							</div>
 
-   			 `;
+                `;
+               
         bot.innerHTML = `
                                 <div class="media-left">
                                     <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="img-circle img-m" alt="Profile Picture">
@@ -105,12 +107,13 @@ $(document).ready(function() {
         }
         
     }
-    function chaton(ask,id) {   
-        if(ask == "Yes" && id == 'yes'){
-            console.log('hi');
-        $('.requirementform').show();       
-        }
+    function chaton(ask) {   
+        // if(ask == "Yes" && id == 'yes'){
+        //     console.log('hi');
+        // $('.requirementform').show();       
+        // }
         // else{
+            
             setTimeout(function(){
                 $('#typing').show();
                 updateScroll();
@@ -118,6 +121,7 @@ $(document).ready(function() {
             let username = "local-user";
             bot.reply(username, ask).then(function(reply) {
                 console.log("The bot says: " + reply);
+                console.log(reply == delivery);
     
              // output on ui
             var parent = document.querySelector('#parent');
@@ -134,18 +138,41 @@ $(document).ready(function() {
                                     </div>
     
                     `;
-            bot.innerHTML = `
-                                    <div class="media-left">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="img-circle img-m" alt="Profile Picture">
-                                    </div>
-                                    <div class="media-body pad-hor">
-                                        <div class="speech">
-                                            <p>${reply}</p
-                                        </div>
-                                        
-                                    </div>
-                                `;
-    
+                    if(reply !== delivery){
+                        bot.innerHTML = `
+                        <div class="media-left">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="img-circle img-m" alt="Profile Picture">
+                        </div>
+                        <div class="media-body pad-hor">
+                            <div class="speech">
+                                <p>${reply}</p
+                            </div>
+                            <div>
+                             <li class="option yesno">Yes</li>
+                             <li class="option yesno">No</li>
+                            </div>
+                            
+                        </div>
+                    `;
+                    }
+                    else{
+                        bot.innerHTML = `
+                        <div class="media-left">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="img-circle img-m" alt="Profile Picture">
+                        </div>
+                        <div class="media-body pad-hor">
+                            <div class="speech">
+                                <p>${reply}</p
+                            </div>
+                            <div>
+                            <li class="option yesno">3 weeks</li>
+                            <li class="option yesno">3 months</li>
+                            <li class="option yesno">6 months</li>
+                            <li class="option yesno">9 months</li>
+                           </div>
+                        </div>
+                                `;  
+                    }              
             x.play();
             // console.log(query);
             parent.appendChild(query);
@@ -159,8 +186,7 @@ $(document).ready(function() {
                 // newva
                 $('.yesno').on('click',function(e){
                     console.log(e.target.parentNode.parentNode.parentNode);
-                    e.target.parentNode.parentNode.parentNode.style.pointerEvents = 'none';
-                    e.target.parentNode.parentNode.parentNode.style.cursor = 'notAllowed';
+                    e.target.parentNode.style.display = 'none';
                     chaton(e.target.textContent,e.target.id);
                 }) ;
                 },3000);
