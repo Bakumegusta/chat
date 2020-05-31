@@ -301,4 +301,18 @@ label{
         padding:0px !important;
         margin: 0px !important;
     }
+    .requirementform {
+        width: 80%;
+        background-color: #a94442;
+        position: absolute;
+        top: 120px;
+        left: 40px;
+        height: 350px;
+        overflow: scroll;
+        overflow-x: hidden;
+        display: block;
+        border-style: solid!important;
+        border-width: 10px;
+        border-color: rgba(255,255,255,.1);
+    }
   }

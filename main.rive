@@ -3,14 +3,20 @@
 - <set name=<formal>>good <get name>.
 + icrew v4 products
 - Are you looking to start a new Virtual Airline?{topic=newva}
+^ <li class="option yesno" id="yes">Yes</li>
+^ <li class="option yesno">No</li>
 > topic newva
- + no
- - Are you an existing Virtual Airline and want to upgrade to iCrew v4?{topic=va}
-  + *
- -  Are you looking to start a new Virtual Airline?
++ no
+- Are you an existing Virtual Airline and want to upgrade to iCrew v4?{topic=va}
+^ <li class="option yesno">Yes</li>
+^ <li class="option yesno">No</li>
++ yes{weight=100}
+- {topic=random}Thank you!
  < topic
 
  > topic va
- + no
- - Are you looking to start a new Virtual Airline?{topic=newva}
++ yes{weight=100}
+- please share your name
++ no{weight=100}
+- {topic=random}Quitter!
  < topic

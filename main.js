@@ -15,7 +15,7 @@ $(document).ready(function() {
 
     function option(){
         options.forEach(function(option){
-            console.log(option);
+            // console.log(option);
             option.addEventListener('click',function(e){
                 var ask = e.target.textContent;
                 console.log(ask);
@@ -46,72 +46,71 @@ $(document).ready(function() {
     function chat() {  
         var chatinput = document.querySelector('#chat-input').value;  
          console.log(chatinput);
-         chaton(chatinput);
-        // if(chatinput != ''){
-        //     // typing
-        //     setTimeout(function(){
-        //         $('#typing').show();     
-        //         updateScroll();
-        //         },500);
+        if(chatinput != ''){
+            // typing
+            setTimeout(function(){
+                $('#typing').show();     
+                updateScroll();
+                },500);
                 
-        //     let username = "local-user";
-        // bot.reply(username, chatinput).then(function(reply) {
-        //     console.log("The bot says: " + reply);
+            let username = "local-user";
+        bot.reply(username, chatinput).then(function(reply) {
+            console.log("The bot says: " + reply);
 
-        //  // output on ui
-        // var parent = document.querySelector('#parent');
-        // var query = document.createElement('li');
-        // var bot = document.createElement('li');
-        // bot.setAttribute('class', 'mar-btm');
-        // query.setAttribute('class', 'mar-btm');
-        // query.innerHTML = `
-    	// 						<div class="media-body pad-hor speech-right">
-    	// 							<div class="speech">
-    	// 								<p>${chatinput}</p>
-    	// 							</div>
-    	// 						</div>
+         // output on ui
+        var parent = document.querySelector('#parent');
+        var query = document.createElement('li');
+        var bot = document.createElement('li');
+        bot.setAttribute('class', 'mar-btm');
+        query.setAttribute('class', 'mar-btm');
+        query.innerHTML = `
+    							<div class="media-body pad-hor speech-right">
+    								<div class="speech">
+    									<p>${chatinput}</p>
+    								</div>
+    							</div>
 
-   		// 	 `;
-        // bot.innerHTML = `
-        //                         <div class="media-left">
-        //                             <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="img-circle img-m" alt="Profile Picture">
-        //                         </div>
-    	// 						<div class="media-body pad-hor">
-    	// 							<div class="speech">
-    	// 								<p>${reply}</p
-    	// 							</div>
-    	// 						</div>
-        //         `;
+   			 `;
+        bot.innerHTML = `
+                                <div class="media-left">
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="img-circle img-m" alt="Profile Picture">
+                                </div>
+    							<div class="media-body pad-hor">
+    								<div class="speech">
+    									<p>${reply}</p
+    								</div>
+    							</div>
+                `;
                 
-        // // console.log(query);
-        // parent.appendChild(query);   
-        // updateScroll();
-        // x.play();
-        // setTimeout(function(){
-        //     parent.appendChild(bot);
-        //     y.play();
-        //     updateScroll();
-        //     $('#typing').hide();
-        //     },3000);
+        // console.log(query);
+        parent.appendChild(query);   
+        updateScroll();
+        x.play();
+        setTimeout(function(){
+            parent.appendChild(bot);
+            y.play();
+            updateScroll();
+            $('#typing').hide();
+            },3000);
 
-        // // reset input field
-        // document.querySelector('#chat-input').value='';
-        // });
-        // }else{
-        //     $('.alert').show();
-        //     setTimeout(function(){
-        //     $('.alert').hide();             
-        //         },3000);
+        // reset input field
+        document.querySelector('#chat-input').value='';
+        });
+        }else{
+            $('.alert').show();
+            setTimeout(function(){
+            $('.alert').hide();             
+                },3000);
 
-        // }
+        }
         
     }
-    function chaton(ask) {   
-        if(ask == "Yes"){
+    function chaton(ask,id) {   
+        if(ask == "Yes" && id == 'yes'){
             console.log('hi');
         $('.requirementform').show();       
         }
-        else{
+        // else{
             setTimeout(function(){
                 $('#typing').show();
                 updateScroll();
@@ -143,8 +142,7 @@ $(document).ready(function() {
                                         <div class="speech">
                                             <p>${reply}</p
                                         </div>
-                                        <li class="option yesno">Yes</li>
-                                        <li class="option yesno">No</li>
+                                        
                                     </div>
                                 `;
     
@@ -158,17 +156,19 @@ $(document).ready(function() {
                 y.play();
                 updateScroll();
                 $('#typing').hide();           
-                // yesno
+                // newva
                 $('.yesno').on('click',function(e){
-                    // console.log(e.target.textContent);
-                    chaton(e.target.textContent);
+                    console.log(e.target.parentNode.parentNode.parentNode);
+                    e.target.parentNode.parentNode.parentNode.style.pointerEvents = 'none';
+                    e.target.parentNode.parentNode.parentNode.style.cursor = 'notAllowed';
+                    chaton(e.target.textContent,e.target.id);
                 }) ;
                 },3000);
     
             // reset input field
             document.querySelector('#chat-input').value='';
             });
-        }
+        // }
         
     }
 
