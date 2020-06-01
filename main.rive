@@ -1,44 +1,54 @@
 
 + good *
 - <set name=<formal>>good <get name>.
-// + icrew v4 products
-// - Are you looking to start a new Virtual Airline?{topic=newva}
-// ^ <li class="option yesno" id="yes">Yes</li>
-// ^ <li class="option yesno">No</li>
-// > topic newva
-// + no
-// - Are you an existing Virtual Airline and want to upgrade to iCrew v4?{topic=va}
-// ^ <li class="option yesno">Yes</li>
-// ^ <li class="option yesno">No</li>
-// + yes{weight=100}
-// - {topic=random}Thank you!
-//  < topic
-
-//  > topic va
-// + yes{weight=100}
-// - please share your name
-// + no{weight=100}
-// - {topic=random}Quitter!
-//  < topic
-
 
 + icrew v4 products
-- Are you looking to start a new Virtual Airline?
-+ yes
-% are you looking to start a new virtual airline
-- Do you have a domain?
-+ no
-% are you looking to start a new virtual airline
-- Are you an existing Virtual Airline and want to upgrade to iCrew v4?
-+ (yes|no)
-% do you have a domain
-- do you have  hosting?
-+ (yes|no)
-% do you have hosting
-- Do you have SmartCars?
-+ (yes|no)
-% do you have smartcars
-- what is the expected delivery
-+ (3 weeks|3 months|6 months|9 months)
-% what is the expected delivery
-- thank you :) we will get in touch with you shortly.
+- Are you looking to start a new Virtual Airline?{topic=va}
+^ <li class="option yesno">yes</li>
+^ <li  class="option yesno">no</li>
+
+> topic va
+	+ yes
+	- do you have a domain{topic=domain}
+	^ <li class="option yesno">yes</li>
+    ^ <li  class="option yesno">no</li>
+    + no
+    -  Are you an existing Virtual Airline and want to upgrade to iCrew v4?{topic=random}
+
+< topic
+> topic domain
+	+ (yes|no)
+	- do you have a hosting{topic=hosting}
+	^ <li class="option yesno">yes</li>
+    ^ <li  class="option yesno">no</li>
+
+< topic
+> topic hosting
+	+ (yes|no)
+	- do you have a smartcars{topic=smartcars}
+	^ <li class="option yesno">yes</li>
+    ^ <li  class="option yesno">no</li>
+
+< topic
+> topic smartcars
+	+ (yes|no)
+	- what is your expected delivery{topic=delivery}
+	^ <li class="option yesno">3 weeks</li>
+    ^ <li  class="option yesno">3 months</li>
+    ^ <li class="option yesno">6 months</li>
+    ^ <li  class="option yesno">9 months</li>
+
+< topic
+> topic delivery
+	+ (3 weeks|3 months|6 months|9 months)
+	- what is your budget{topic=budget}
+    ^ <li class="option yesno">500</li>
+    ^ <li  class="option yesno">1000</li>
+    ^ <li class="option yesno">1500</li>
+    ^ <li  class="option yesno">2000</li>
+
+< topic
+> topic budget
+	+ (500|1000|1500|2000)
+	- Thank you :){topic=random}
+< topic
