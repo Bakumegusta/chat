@@ -95,8 +95,7 @@ body{
     background: #b7dcfe;
     color: #317787;
     display: inline-block;
-    border-radius: 0;
-    padding: 15px;
+    padding: 10px;
     border-radius: 20px;
     min-width: 70px;
     min-height: 30px;
@@ -202,12 +201,30 @@ a:hover{
     color: rgb(13, 28, 140)!important;
     display: inline-block;
     padding: 10px;
-    border-radius: 20px;
+    border-radius: 10px;
     border-style: none;
     display: block;
     margin: 5px;
     width: 100%;
     text-align: center;
+}
+.yesno{
+    font-size: 14px;
+    line-height: 18px;
+    background-color: rgb(232, 234, 253);
+    color: rgb(13, 28, 140)!important;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 10px;
+    border-style: none;
+    display: block;
+    margin: 5px;
+    text-align: center;
+}
+.yesno:hover{
+    background: linear-gradient(135deg, rgb(48, 71, 236) 0%, rgb(15, 34, 167) 100%);
+    color: white !important;
+    cursor: pointer;
 }
 .option:hover{
     background: linear-gradient(135deg, rgb(48, 71, 236) 0%, rgb(15, 34, 167) 100%);
