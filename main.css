@@ -1,7 +1,9 @@
 *{
     border-style: none !important;
 }
-
+div:focus{
+    outline:0 !important;
+}
 html {
     scroll-behavior: smooth;
   }
@@ -246,7 +248,7 @@ a:hover{
 .submit{
     padding-left: 0px !important;
     padding-left: 0px !important;
-    margin-left: 10px;
+    margin-left: 20px;
     width: 20% !important;
 }
 p{

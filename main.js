@@ -44,6 +44,7 @@ $(document).ready(function() {
         // event call
     submit.addEventListener('click', chat);
     function chat() {  
+        $('.yesno').hide();
         var chatinput = document.querySelector('#chat-input').value;
          console.log(chatinput);
         if(chatinput != ''){
@@ -74,7 +75,7 @@ $(document).ready(function() {
                
         bot.innerHTML = `
                                 <div class="media-left">
-                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="img-circle img-m" alt="Profile Picture">
+                                    <img src="https://icrewsystems.com/icrewsystems_mascot.gif" class="img-circle img-m" alt="Profile Picture">
                                 </div>
     							<div class="media-body pad-hor">
     								<div class="speech">
@@ -92,6 +93,11 @@ $(document).ready(function() {
             y.play();
             updateScroll();
             $('#typing').hide();
+            $('.yesno').on('click',function(e){
+                // console.log(e.target.parentNode.parentNode.parentNode);
+                // e.target.parentNode.style.display = 'none';
+                chaton(e.target.textContent);
+            }) ;
             },3000);
 
         // reset input field
@@ -106,7 +112,9 @@ $(document).ready(function() {
         }
         
     }
-    function chaton(ask) {        
+    function chaton(ask) {    
+        $('.yesno').hide();
+
             setTimeout(function(){
                 $('#typing').show();
                 updateScroll();
@@ -131,7 +139,7 @@ $(document).ready(function() {
                     `;
             bot.innerHTML = `
                         <div class="media-left">
-                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="img-circle img-m" alt="Profile Picture">
+                            <img src="https://icrewsystems.com/icrewsystems_mascot.gif" class="img-circle img-m" alt="Profile Picture">
                         </div>
                         <div class="media-body pad-hor">
                             <div class="speech">
@@ -154,7 +162,6 @@ $(document).ready(function() {
                 $('.yesno').on('click',function(e){
                     // console.log(e.target.parentNode.parentNode.parentNode);
                     // e.target.parentNode.style.display = 'none';
-                    $('.yesno').hide();
                     chaton(e.target.textContent);
                 }) ;
                 },3000);
