@@ -9,7 +9,7 @@
 
 > topic va
 	+ yes
-	- do you have a domain{topic=domain}
+	- Do you have a Domain?{topic=domain}
 	^ <li class=" yesno">yes</li>
     ^ <li  class=" yesno">no</li>
     + no
@@ -18,21 +18,21 @@
 < topic
 > topic domain
 	+ (yes|no)
-	- do you have a hosting{topic=hosting}
+	- Do you have a Hosting?{topic=hosting}
 	^ <li class=" yesno">yes</li>
     ^ <li  class=" yesno">no</li>
 
 < topic
 > topic hosting
 	+ (yes|no)
-	- do you have a smartcars{topic=smartcars}
+	- Do you have a SmartCars?{topic=smartcars}
 	^ <li class=" yesno">yes</li>
     ^ <li  class=" yesno">no</li>
 
 < topic
 > topic smartcars
 	+ (yes|no)
-	- what is your expected delivery{topic=delivery}
+	- What is your expected delivery?{topic=delivery}
 	^ <li class=" yesno">3 weeks</li>
     ^ <li  class=" yesno">3 months</li>
     ^ <li class=" yesno">6 months</li>
@@ -41,7 +41,7 @@
 < topic
 > topic delivery
 	+ (3 weeks|3 months|6 months|9 months)
-	- what is your budget{topic=budget}
+	- What is your budget?{topic=budget}
     ^ <li class=" yesno">500</li>
     ^ <li  class=" yesno">1000</li>
     ^ <li class=" yesno">1500</li>
@@ -50,5 +50,7 @@
 < topic
 > topic budget
 	+ (500|1000|1500|2000)
-	- Thank you :){topic=random}
+	- Thank you :)
+	^ <p> Our team will get back to you soon</p>
+	^ Is there anything else I can help you with?{topic=random}
 < topic

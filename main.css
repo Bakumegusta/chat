@@ -106,7 +106,7 @@ body{
     border-radius: 20px;
     min-width: 70px;
     min-height: 30px;
-    max-width: 75%;
+    max-width: 90%;
     /* text-align: center; */
 }
 .speech-right>.speech:before {
@@ -248,7 +248,7 @@ a:hover{
 .submit{
     padding-left: 0px !important;
     padding-left: 0px !important;
-    margin-left: 20px;
+    margin-left: 10px;
     width: 20% !important;
 }
 p{
