@@ -1,7 +1,6 @@
 $(document).ready(function() {
     $('.alert').hide();
     $('#typing').hide();
-    $('.requirementform').hide();
     // scroll down
     function updateScroll(){
         var element = document.querySelector(".nano-content");
