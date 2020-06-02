@@ -19,7 +19,7 @@
 	  <audio id="sound2">
 		<source src="asset/sound3.mp3" type="audio/ogg">
 	  </audio>
-    <div class="col-md-12 col-lg-6">
+    <div class="col-md-12 col-lg-6 mobile">
         <div class="panel">
         	<!--Heading-->
     		<div class="panel-heading">
@@ -39,7 +39,7 @@
     							</div>
     							<div class="media-body pad-hor">
     								<div class="speech">
-    									<p> Hello!<br> Welcome to  <strong style="color: #337ab7">iCrewsystems</strong> </p>
+    									<p> Hello!<br> Welcome to  <strong style="color:  rgb(239, 41, 100)">iCrewsystems</strong> </p>
     								</div>
     							</div>
 							</li>
@@ -54,13 +54,13 @@
     							</div>
 							</li>	
 							<div class="list-group">
-								<li class="option">iCrew v4 products</li>
-								<li  class="option">App Development</li>
-								<li  class=" option">Web Development</li>
+								<li class="option">iCrew v4 products <i class="fas fa-rocket"></i></li>
+								<li  class="option">App Development <i class="fab fa-android"></i></li>
+								<li  class=" option">Web Development <i class="fas fa-cogs"></i></li>
 							  </div>
 							<!--apeend caht  -->
 							<span id="parent"></span>
-							<li class="mar-btm" id="typing">
+							<li class="mar-btm" id="typing" style="display: none;">
 								<div class="media-left">
     								<img src="https://icrewsystems.com/icrewsystems_mascot.gif" class="img-circle img-m" alt="Profile Picture">
     							</div>
@@ -74,14 +74,14 @@
     				</div>
     			<div class="nano-pane"><div class="nano-slider" style="height: 141px; transform: translate(0px, 0px);"></div></div></div>  
 				<!--Widget footer-->
-				<center><span class="alert text-danger "><strong>Sorry!</strong> Please  ask me something.</span> </center>
+				<center><span class="alert text-danger " style="display: none;"><i class="fas fa-frown"></i><strong>Sorry!</strong> Please  ask me something.</span> </center>
     			<div class="panel-footer">
     				<div class="row">
     					<div class="col-xs-9 chat-input">
     						<input type="text"  id ="chat-input" placeholder="Enter your text here..." class="form-control chat-input" autofocus>
     					</div>
     					<div class="col-xs-3 submit">
-    						<span class="btn btn-primary btn-block " id="submit" type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></span>
+    						<span class="btn btn-primary btn-block " id="submit" type="submit"><i class="fas fa-paper-plane"></i></span>
     					</div>
     				</div>
 				</div>

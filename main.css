@@ -31,7 +31,7 @@ body{
     padding: 0;
     border-bottom:1px solid #eee;
     height: 100px;
-    background: linear-gradient(135deg, rgb(48, 71, 236) 0%, rgb(15, 34, 167) 100%);
+    background:rgb(239, 41, 100);
     color: white
 }
 .panel-control {
@@ -99,8 +99,8 @@ body{
 }
 .speech {
     position: relative;
-    background: #b7dcfe;
-    color: #317787;
+    background: #eef1f3;
+    color:#333;
     display: inline-block;
     padding: 10px;
     border-radius: 20px;
@@ -144,7 +144,7 @@ body{
     padding-right: 15px;
 }
 .speech-right>.speech {
-    background: linear-gradient(135deg, rgb(48, 71, 236) 0%, rgb(15, 34, 167) 100%);
+    background: rgb(239, 41, 100);
     color: white;
     text-align: center;
 }
@@ -204,12 +204,14 @@ a:hover{
 .option{
     font-size: 14px;
     line-height: 18px;
-    background-color: rgb(232, 234, 253);
-    color: rgb(13, 28, 140)!important;
+    background-color: white;
+    color: rgb(239, 41, 100)!important;
     display: inline-block;
     padding: 10px;
-    border-radius: 10px;
-    border-style: none;
+    border-radius: 20px;
+    border-style: solid !important;
+    border-width: 1px;
+     border-color: rgb(239, 41, 100);
     display: block;
     margin: 5px;
     width: 100%;
@@ -218,27 +220,29 @@ a:hover{
 .yesno{
     font-size: 14px;
     line-height: 18px;
-    background-color: rgb(232, 234, 253);
-    color: rgb(13, 28, 140)!important;
+    background-color: white;
+    color:  rgb(239, 41, 100)!important;
     display: inline-block;
     padding: 10px;
-    border-radius: 10px;
-    border-style: none;
+    border-radius: 20px;
+    border-style: solid !important;
+    border-width: 1px;
+    border-color: rgb(239, 41, 100);
     display: block;
     margin: 5px;
     text-align: center;
 }
 .yesno:hover{
-    background: linear-gradient(135deg, rgb(48, 71, 236) 0%, rgb(15, 34, 167) 100%);
+    background: rgb(239, 41, 100);
     color: white !important;
     cursor: pointer;
 }
 .option:hover{
-    background: linear-gradient(135deg, rgb(48, 71, 236) 0%, rgb(15, 34, 167) 100%);
+    background: rgb(239, 41, 100);
     color: white !important;
 }
 #submit{
-    background: linear-gradient(135deg, rgb(48, 71, 236) 0%, rgb(15, 34, 167) 100%);
+    background: rgb(239, 41, 100);
     color: white;
     border-radius: 20px;
 }
@@ -338,5 +342,14 @@ label{
         border-style: solid!important;
         border-width: 10px;
         border-color: rgba(255,255,255,.1);
+    }
+    .list-group li {
+        margin-left: 0px !important;
+    }
+    .list-group{
+        width: 95% !important;
+    }
+    .mobile{
+        width: 100% !important;
     }
   }
