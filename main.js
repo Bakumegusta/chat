@@ -4,6 +4,8 @@ $(document).ready(function() {
         var element = document.querySelector(".nano-content");
         element.scrollTop = element.scrollHeight;
     }
+    let answer;
+    let data = [];
     var requrementform = false;
     var submit = document.querySelector('#submit');
     var options = document.querySelectorAll('.option');
@@ -15,7 +17,7 @@ $(document).ready(function() {
             // console.log(option);
             option.addEventListener('click',function(e){
                 var ask = e.target.textContent;
-                console.log(ask);
+                // console.log(ask);
                 chaton(ask);
             });
             
@@ -41,75 +43,28 @@ $(document).ready(function() {
         // event call
     submit.addEventListener('click', chat);
     function chat() {  
+        console.log(data);                
+
         $('.yesno').hide();
         var chatinput = document.querySelector('#chat-input').value;
-         console.log(chatinput);
+        //  console.log(chatinput);
         if(chatinput != ''){
             // typing
             setTimeout(function(){
                 $('#typing').show();     
                 updateScroll();
                 },500);
+                chaton(chatinput);
                 
-            let username = "local-user";
-        bot.reply(username, chatinput).then(function(reply) {
-            console.log("The bot says: " + reply);
-
-         // output on ui
-        var parent = document.querySelector('#parent');
-        var query = document.createElement('li');
-        var bot = document.createElement('li');
-        bot.setAttribute('class', 'mar-btm');
-        query.setAttribute('class', 'mar-btm');
-        query.innerHTML = `
-    							<div class="media-body pad-hor speech-right">
-    								<div class="speech">
-    									<p>${chatinput}</p>
-    								</div>
-    							</div>
-
-                `;
-               
-        bot.innerHTML = `
-                                <div class="media-left">
-                                    <img src="https://icrewsystems.com/icrewsystems_mascot.gif" class="img-circle img-m" alt="Profile Picture">
-                                </div>
-    							<div class="media-body pad-hor">
-    								<div class="speech">
-    									<p>${reply}</p
-    								</div>
-    							</div>
-                `;
-                
-        // console.log(query);
-        parent.appendChild(query);   
-        updateScroll();
-        x.play();
-        setTimeout(function(){
-            parent.appendChild(bot);
-            y.play();
-            updateScroll();
-            $('#typing').hide();
-            $('.yesno').on('click',function(e){
-                // console.log(e.target.parentNode.parentNode.parentNode);
-                // e.target.parentNode.style.display = 'none';
-                chaton(e.target.textContent);
-            }) ;
-            },3000);
-
-        // reset input field
-        document.querySelector('#chat-input').value='';
-        });
         }else{
             $('.alert').show();
             setTimeout(function(){
             $('.alert').hide();             
                 },3000);
-
         }
         
     }
-    function chaton(ask) {    
+    function chaton(user) {    
         $('.yesno').hide();
 
             setTimeout(function(){
@@ -117,8 +72,8 @@ $(document).ready(function() {
                 updateScroll();
                 },500);
             let username = "local-user";
-            bot.reply(username, ask).then(function(reply) {
-                console.log("The bot says: " + reply);
+            bot.reply(username, user).then(function(reply) {
+                // console.log("The bot says: " + reply);
              // output on ui
             var parent = document.querySelector('#parent');
             var query = document.createElement('li');
@@ -126,24 +81,22 @@ $(document).ready(function() {
             bot.setAttribute('class', 'mar-btm');
             query.setAttribute('class', 'mar-btm');
             query.innerHTML = `
-                                   
-                                    <div class="media-body pad-hor speech-right">
-                                        <div class="speech">
-                                            <p>${ask}</p>
-                                        </div>
+                                <div class="media-body pad-hor speech-right">
+                                    <div class="speech">
+                                        <p>${user}</p>
                                     </div>
-    
-                    `;
+                                </div>
+                                `;
             bot.innerHTML = `
-                        <div class="media-left">
-                            <img src="https://icrewsystems.com/icrewsystems_mascot.gif" class="img-circle img-m" alt="Profile Picture">
-                        </div>
-                        <div class="media-body pad-hor">
-                            <div class="speech">
-                                <p>${reply}</p
-                            </div>                      
-                        </div>
-                    `;
+                            <div class="media-left">
+                                <img src="https://icrewsystems.com/icrewsystems_mascot.gif" class="img-circle img-m" alt="Profile Picture">
+                            </div>
+                            <div class="media-body pad-hor">
+                                <div class="speech">
+                                    <p>${reply}</p
+                                </div>                      
+                            </div>
+                             `;
                                  
             x.play();
             // console.log(query);
@@ -162,7 +115,19 @@ $(document).ready(function() {
                     chaton(e.target.textContent);
                 }) ;
                 },3000);
-    
+                
+                // save data
+                var pos = reply.indexOf("");
+                var poss = reply.lastIndexOf("?");
+                // console.log(pos,poss);
+                 answer = reply.slice(pos,poss);
+                //  console.log(answer);
+                 
+                
+                data.push({user,answer});
+                // console.log(data);
+                data.forEach((data)=>console.log(data.user,data.answer));
+                
             // reset input field
             document.querySelector('#chat-input').value='';
             });
