@@ -4,6 +4,14 @@ $(document).ready(function() {
         var element = document.querySelector(".nano-content");
         element.scrollTop = element.scrollHeight;
     }
+    var id = getRandomInt(0, Date.now());
+    var date = new Date();
+    var dd = date.getDate();
+    var mm = date.getMonth()+1;
+    var yy = date.getFullYear();
+    date = `${dd}/${mm}/${yy}`;
+    sessionStorage.setItem('sessionID',id);
+    var sessionID = sessionStorage.getItem('sessionID');
     let answer;
     let data = [];
     var requrementform = false;
@@ -122,12 +130,10 @@ $(document).ready(function() {
                 // console.log(pos,poss);
                  answer = reply.slice(pos,poss);
                 //  console.log(answer);
-                 
-                
-                data.push({user,answer});
+                data.push({user:user,answer:answer,date:date,sessionID:sessionID});
                 // console.log(data);
-                data.forEach((data)=>console.log(data.user,data.answer));
-                
+                // data.forEach((data)=>console.log(data));
+                console.log(data);              
             // reset input field
             document.querySelector('#chat-input').value='';
             });
@@ -148,6 +154,13 @@ $(document).ready(function() {
     $('.shut').on('click',function(){
         $('.requirementform').hide();
     })
+    // id generate
+    function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min;
+      }
+         
 });
 
 
