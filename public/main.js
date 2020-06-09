@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
     // scroll down
     function updateScroll(){
@@ -13,7 +14,7 @@ $(document).ready(function() {
     sessionStorage.setItem('sessionID',id);
     var sessionID = sessionStorage.getItem('sessionID');
     let answer;
-    let data = [];
+    let data ;
     var requrementform = false;
     var submit = document.querySelector('#submit');
     var options = document.querySelectorAll('.option');
@@ -127,13 +128,20 @@ $(document).ready(function() {
                 // save data
                 var pos = reply.indexOf("");
                 var poss = reply.lastIndexOf("?");
-                // console.log(pos,poss);
-                 answer = reply.slice(pos,poss);
-                //  console.log(answer);
-                data.push({user:user,answer:answer,date:date,sessionID:sessionID});
-                // console.log(data);
-                // data.forEach((data)=>console.log(data));
-                console.log(data);              
+                answer = reply.slice(pos,poss);
+                data = ({user:user,answer:answer,date:date,sessionID:sessionID});
+                console.log(data);     
+                
+                const options = {
+                    method:'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                      },
+                    body:JSON.stringify(data)
+                }
+                fetch('/api', options).then(response => {
+                    console.log(response);
+                })
             // reset input field
             document.querySelector('#chat-input').value='';
             });
