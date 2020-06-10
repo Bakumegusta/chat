@@ -52,7 +52,7 @@ $(document).ready(function() {
         // event call
     submit.addEventListener('click', chat);
     function chat() {  
-        console.log(data);                
+        // console.log(data);                
 
         $('.yesno').hide();
         var chatinput = document.querySelector('#chat-input').value;
@@ -74,6 +74,8 @@ $(document).ready(function() {
         
     }
     function chaton(user) {    
+    var time = Date.now();
+
         $('.yesno').hide();
 
             setTimeout(function(){
@@ -129,7 +131,7 @@ $(document).ready(function() {
                 var pos = reply.indexOf("");
                 var poss = reply.lastIndexOf("?");
                 answer = reply.slice(pos,poss);
-                data = ({user:user,answer:answer,date:date,sessionID:sessionID});
+                data = ({user:user,answer:answer,date:date,sessionID:sessionID,id:time});
                 console.log(data);     
                 
                 const options = {
