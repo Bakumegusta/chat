@@ -11,16 +11,19 @@ async function getchat(){
   
       tr.innerHTML = `
                     <td>${data.id}</td>
+                    <td>${data.name}</td>
+                    <td>${data.email}</td>
                     <td>${data.user}</td>
                     <td>${data.answer}</td>
                     <td>${data.sessionID}</td>
                     <td>${data.date}</td>  
-                    <td ><button class ='session' value ="${data.sessionID}" onclick="conversation(this.value)"> view convo</button></td>  
+                    <td ><button class ='session option' value ="${data.sessionID}" onclick="conversation(this.value)"> view convo</button></td>  
 
                     `;
                     chatparent.append(tr);
     })
       $('#chattable').DataTable();
+
 
 }
 

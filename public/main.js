@@ -1,10 +1,13 @@
 
 $(document).ready(function() {
+ 
     // scroll down
     function updateScroll(){
         var element = document.querySelector(".nano-content");
         element.scrollTop = element.scrollHeight;
     }
+    var name; 
+    var email;
     var id = getRandomInt(0, Date.now());
     var date = new Date();
     var dd = date.getDate();
@@ -52,6 +55,7 @@ $(document).ready(function() {
         // event call
     submit.addEventListener('click', chat);
     function chat() {  
+       
         // console.log(data);                
 
         $('.yesno').hide();
@@ -131,7 +135,7 @@ $(document).ready(function() {
                 var pos = reply.indexOf("");
                 var poss = reply.lastIndexOf("?");
                 answer = reply.slice(pos,poss);
-                data = ({user:user,answer:answer,date:date,sessionID:sessionID,id:time});
+                data = ({user:user,answer:answer,date:date,sessionID:sessionID,id:time,name:name,email:email});
                 console.log(data);     
                 
                 const options = {
@@ -170,6 +174,20 @@ $(document).ready(function() {
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min)) + min;
       }
+
+      $('#data').on("click",function(e){
+        e.preventDefault();
+        name = document.querySelector('#name').value;
+        email = document.querySelector('#email').value;
+        if(name == '' || email == ''){
+            $('.banned').show();
+        }else{
+            console.log(name);
+            console.log(email);
+            $('.requirementform').hide();
+        }
+         
+    })
          
 });
 
