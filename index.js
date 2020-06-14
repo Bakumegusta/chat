@@ -1,19 +1,19 @@
-require('dotenv/config');
-import express, { json, static } from 'express';
+require('dotenv').config()
+const express = require('express')
 const app = express()
-import { connect, connection } from 'mongoose';
+const mongoose = require('mongoose')
 const port = process.env.PORT || 3000;
 // db connect
-connect(process.env.DATABASE_URL, { useNewUrlParser: true })
-const db = connection
+mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true })
+const db = mongoose.connection
 db.on('error', (error) => console.error(error))
 db.once('open', () => console.log('Connected to Database'))
 
-app.use(json())
-app.use(static('public'));
+app.use(express.json())
+app.use(express.static('public'));
 
 // routes
-import chatdataRouter from './routes/chatdata';
+const chatdataRouter = require('./routes/chatdata')
 
 
 // middleware
