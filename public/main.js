@@ -4,6 +4,9 @@ $(document).ready(function() {
         var element = document.querySelector(".nano-content");
         element.scrollTop = element.scrollHeight;
     }
+    let intent = "icrew v4";
+    let name;
+    let email;
     var id = getRandomInt(0, Date.now());
     var date = new Date();
     var dd = date.getDate();
@@ -14,7 +17,6 @@ $(document).ready(function() {
     var sessionID = sessionStorage.getItem('sessionID');
     let answer;
     let data = [];
-    var requrementform = false;
     var submit = document.querySelector('#submit');
     var options = document.querySelectorAll('.option');
     var x = document.getElementById("sound"); 
@@ -130,10 +132,21 @@ $(document).ready(function() {
                 // console.log(pos,poss);
                  answer = reply.slice(pos,poss);
                 //  console.log(answer);
-                data.push({user:user,answer:answer,date:date,sessionID:sessionID});
+                data = ({intent:intent,user:user,answer:answer,date:date,sessionID:sessionID,name:name,email:email});
                 // console.log(data);
                 // data.forEach((data)=>console.log(data));
-                console.log(data);              
+                console.log(data);
+                
+                const options = {
+                    method:'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                      },
+                    body:JSON.stringify(data)
+                }
+                fetch('/chatdata', options).then(response => {
+                    console.log(response);
+                })
             // reset input field
             document.querySelector('#chat-input').value='';
             });
@@ -152,7 +165,6 @@ $(document).ready(function() {
 
     // close btn
     $('.shut').on('click',function(){
-        $('.requirementform').hide();
     })
     // id generate
     function getRandomInt(min, max) {
@@ -160,6 +172,25 @@ $(document).ready(function() {
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min)) + min;
       }
+
+    //   get name and email
+    $('.snip1086').on("click",function(e){
+        e.preventDefault();
+        name = document.querySelector('#name').value;
+        email = document.querySelector('#email').value;
+        if(name == '' || email == ''){
+            $('.banned').show();
+            setTimeout(function(){
+                $('.banned').hide();             
+                    },3000);
+        }else{
+            console.log(name);
+            console.log(email);
+            $('.requirementform').hide();
+            $('.panel-footer').show();
+        }
+         
+    })
          
 });
 
