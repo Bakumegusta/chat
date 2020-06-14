@@ -28,7 +28,7 @@
 const express = require("express");
 const app = express();
 const mongoose = require('mongoose')
-require('dotenv').config()
+ require('dotenv/config');
 const port = process.env.PORT || 9000;
 app.listen(port, ()=> console.log(`listenng at ${port}`));
 app.use(express.static('public'));
