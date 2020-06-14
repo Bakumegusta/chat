@@ -4,7 +4,8 @@ const app = express()
 const mongoose = require('mongoose')
 const port = process.env.PORT || 3000;
 // db connect
-mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true })
+var DATABASE_URL = 'mongodb+srv://baku:baku2020@cluster0.aleqr.mongodb.net/<dbname>?retryWrites=true&w=majority';
+mongoose.connect(process.env.MONGODB_URI || DATABASE_URL, { useNewUrlParser: true })
 const db = mongoose.connection
 db.on('error', (error) => console.error(error))
 db.once('open', () => console.log('Connected to Database'))
