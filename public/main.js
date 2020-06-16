@@ -99,7 +99,7 @@ $(document).ready(function() {
                                 `;
             bot.innerHTML = `
                             <div class="media-left">
-                                <img src="https://icrewsystems.com/icrewsystems_mascot.gif" class="img-circle img-m" alt="Profile Picture">
+                                <img src="https://www.freepngimg.com/save/62719-vector-end-icons-bot-chatbot-iconworkshop-axialis/512x512" class="img-circle img-m" alt="Profile Picture">
                             </div>
                             <div class="media-body pad-hor">
                                 <div class="speech">
@@ -165,6 +165,7 @@ $(document).ready(function() {
 
     // close btn
     $('.shut').on('click',function(){
+        // $('body').hide();
     })
     // id generate
     function getRandomInt(min, max) {
