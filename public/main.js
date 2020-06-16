@@ -188,7 +188,7 @@ $(document).ready(function() {
             console.log(name);
             console.log(email);
             $('.requirementform').hide();
-            $('.panel-footer').show();
+            $('.panel-footer').css("visibility","visible");
         }
          
     })
