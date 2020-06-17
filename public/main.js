@@ -175,7 +175,7 @@ $(document).ready(function() {
       }
 
     //   get name and email
-    $('.snip1086').on("click",function(e){
+    $('.snip1582').on("click",function(e){
         e.preventDefault();
         name = document.querySelector('#name').value;
         email = document.querySelector('#email').value;

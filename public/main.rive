@@ -1,56 +1,145 @@
 
 + good *
 - <set name=<formal>>good <get name>.
-
-+ icrew v4 products
-- Are you looking to start a new Virtual Airline?{topic=va}
+// project collaberation flow
++ project collaboration
+- Are you looking for project collaberation?{topic=projectcollab}
 ^ <li class=" yesno">yes</li>
 ^ <li  class=" yesno">no</li>
 
-> topic va
+> topic projectcollab
 	+ yes
-	- Do you have a Domain?{topic=domain}
+	- Is the project paid?{topic=projecttype}
 	^ <li class=" yesno">yes</li>
     ^ <li  class=" yesno">no</li>
-    + no
-    -  Are you an existing Virtual Airline and want to upgrade to iCrew v4?{topic=random}
+	+ no
+	- okay ;) If you want a project collaboration you can let me know.{topic=random}
+< topic
+> topic projecttype
+	+ *
+	- Thank you :) I'll get back to you soon.{topic=random}
+	^ If you have any question feels free ask.
 
 < topic
-> topic domain
-	+ (yes|no)
-	- Do you have a Hosting?{topic=hosting}
+// project collaberation flow end
+
+// app development flow
++ app development
+- Do you want me to develop new  App for you?{topic=appdevelop}
+^ <li class=" yesno">yes</li>
+^ <li  class=" yesno">no</li>
+
+> topic appdevelop
+	+ yes
+	- What is your expected delivery?{topic=delivery}
+	^ <li class=" yesno">1 month</li>
+    ^ <li  class=" yesno">2 months</li>
+    ^ <li class=" yesno">3 months</li>
+    ^ <li  class=" yesno">more than 4 months</li>
+	+ no
+	- Do you have existing app that needs modifications or enhancement?{topic=modification}
 	^ <li class=" yesno">yes</li>
-    ^ <li  class=" yesno">no</li>
+	^ <li  class=" yesno">no</li>
 
 < topic
-> topic hosting
-	+ (yes|no)
-	- Do you have a SmartCars?{topic=smartcars}
+> topic delivery
+	+ (1 month|2 months|3 months|more than 4 months)
+	- What is your budget?{topic=budget}
+	^ note: please mentions your currencies after the digits.
+< topic
+> topic budget
+	+ *
+	- Thank you :)
+	^ <p> I'll  will get back to you soon</p>
+	^ Is there anything else I can help you with?{topic=random}
+< topic
+
+// app development flow end
+
+// app development flow
++ web development
+- Do you want me to develop and new website for you?{topic=webdevelop}
+^ <li class=" yesno">yes</li>
+^ <li  class=" yesno">no</li>
+
+> topic webdevelop
+	+ yes
+	- What is your expected delivery?{topic=delivery}
+	^ <li class=" yesno">2 weeks</li>
+    ^ <li  class=" yesno">1 month</li>
+    ^ <li class=" yesno">2 months</li>
+    ^ <li  class=" yesno">3 months</li>
+	+ no
+	- Do you have existing website that needs modifications or enhancement?{topic=modification}
 	^ <li class=" yesno">yes</li>
-    ^ <li  class=" yesno">no</li>
+	^ <li  class=" yesno">no</li>
 
 < topic
-> topic smartcars
-	+ (yes|no)
+> topic delivery
+	+ (2 weeks|1 month|2 months|3 months)
+	- What is your budget?{topic=budget}
+	^ note: please mentions your currencies after the digits.
+< topic
+> topic budget
+	+ *
+	- Thank you :)
+	^ <p> I'll  will get back to you soon</p>
+	^ Is there anything else I can help you with?{topic=random}
+< topic
+
+// app development flow end
+
+
+
+// modification flow
+> topic modification
+	+ yes
 	- What is your expected delivery?{topic=delivery}
 	^ <li class=" yesno">3 weeks</li>
     ^ <li  class=" yesno">3 months</li>
     ^ <li class=" yesno">6 months</li>
     ^ <li  class=" yesno">9 months</li>
+	+ no
+	- Alright! then.{topic=random}
 
 < topic
 > topic delivery
 	+ (3 weeks|3 months|6 months|9 months)
 	- What is your budget?{topic=budget}
-    ^ <li class=" yesno">500</li>
-    ^ <li  class=" yesno">1000</li>
-    ^ <li class=" yesno">1500</li>
-    ^ <li  class=" yesno">2000</li>
 
 < topic
 > topic budget
-	+ (500|1000|1500|2000)
+	+ *
 	- Thank you :)
-	^ <p> Our team will get back to you soon</p>
+	^ <p> I'll will get back to you soon</p>
 	^ Is there anything else I can help you with?{topic=random}
 < topic
+// modification end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
