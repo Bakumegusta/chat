@@ -37,7 +37,7 @@ body{
     position: relative;
     padding: 0;
     border-bottom:1px solid #eee;
-    height: 100px;
+    height: 60px;
     background:rgba(52, 57, 61, .7);
     color: white
 }
@@ -58,6 +58,9 @@ body{
 }
 .panel-footer{
     background:#ffffff00 !important;
+    position: fixed;
+    bottom: 10px;
+    left: 10%;
 }
 .panel-control>.btn:last-child, .panel-control>.btn-group:last-child>.btn:first-child {
     border-bottom-right-radius: 0;
@@ -290,7 +293,7 @@ p{
 .avatar{
     position: absolute;
     margin-left: 20px;
-    margin-top: 20px;
+    margin-top: 0px;
 }
 
 .list-group li{
@@ -348,6 +351,9 @@ label{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.chat-body{
+    height: 100vh;
 }
 
 @media only screen and (max-width: 600px) {
