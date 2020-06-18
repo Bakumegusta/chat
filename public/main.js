@@ -53,7 +53,7 @@ $(document).ready(function() {
         // event call
     submit.addEventListener('click', chat);
     function chat() {  
-        console.log(data);                
+        // console.log(data);                
 
         $('.yesno').hide();
         var chatinput = document.querySelector('#chat-input').value;
@@ -99,7 +99,7 @@ $(document).ready(function() {
                                 `;
             bot.innerHTML = `
                             <div class="media-left">
-                                <img src="https://www.freepngimg.com/save/62719-vector-end-icons-bot-chatbot-iconworkshop-axialis/512x512" class="img-circle img-m" alt="Profile Picture">
+                                <img src="botavatar.png" class="img-circle img-m" alt="Profile Picture">
                             </div>
                             <div class="media-body pad-hor">
                                 <div class="speech">
@@ -135,7 +135,7 @@ $(document).ready(function() {
                 data = ({intent:intent,user:user,answer:answer,date:date,sessionID:sessionID,name:name,email:email});
                 // console.log(data);
                 // data.forEach((data)=>console.log(data));
-                console.log(data);
+                // console.log(data);
                 
                 const options = {
                     method:'POST',
@@ -145,7 +145,7 @@ $(document).ready(function() {
                     body:JSON.stringify(data)
                 }
                 fetch('/chatdata', options).then(response => {
-                    console.log(response);
+                    // console.log(response);
                 })
             // reset input field
             document.querySelector('#chat-input').value='';
@@ -185,8 +185,8 @@ $(document).ready(function() {
                 $('.banned').hide();             
                     },3000);
         }else{
-            console.log(name);
-            console.log(email);
+            // console.log(name);
+            // console.log(email);
             $('.requirementform').hide();
             $('.panel-footer').css("visibility","visible");
         }

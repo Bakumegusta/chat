@@ -2,7 +2,7 @@ getchat();
 async function getchat(){
     const response = await fetch('/chatdata');
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
     data.forEach(function(data){
       // console.log(data.user);
       var tr = document.createElement('tr');
@@ -45,7 +45,7 @@ async function conversation(value){
          return 0;  
       }  
    }
-    console.log(value);
+    // console.log(value);
 
     const convo = data.filter(function(convo){
       if(convo.sessionID == value ){
@@ -53,9 +53,9 @@ async function conversation(value){
       }
     });
     convo.sort(sortByProperty('id'));
-    console.log(convo);
+    // console.log(convo);
     convo.forEach(function(data){
-      console.log(data);
+      // console.log(data);
       
       var convoparent = document.querySelector('#convoparent');
       var answer = document.createElement('li');
