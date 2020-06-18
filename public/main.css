@@ -56,12 +56,13 @@ body{
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.panel-footer{
+
+.panel-footer {
     background: #ffffff00 !important;
-    position: fixed;
+    position: absolute;
     bottom: 10px;
-    left: 5%;
-    right: 5%
+    left: 30%;
+    right: 30%;
 }
 .panel-control>.btn:last-child, .panel-control>.btn-group:last-child>.btn:first-child {
     border-bottom-right-radius: 0;
@@ -304,10 +305,10 @@ p{
     position: absolute;
     margin-left: 15px;
     font-size: 20px;
-    font-weight: bold;
     margin-top: 20px;
-    color:#5bc2cc;
-    border-bottom: 1px solid #5bc2cc !important;
+    color:#4ce8f7;
+    border-bottom: 1px solid currentColor !important;
+    text-transform: uppercase;
 }
 
 
@@ -358,6 +359,13 @@ label{
 }
 
 @media only screen and (max-width: 600px) {
+    .panel-footer{
+        background: #ffffff00 !important;
+        position: fixed;
+        bottom: 10px;
+        left: 5%;
+        right: 5%
+    }
     .panel {
         box-shadow: 0 2px 0 rgba(0,0,0,0.075);
         border-radius: 0;
