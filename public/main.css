@@ -57,10 +57,11 @@ body{
     text-overflow: ellipsis;
 }
 .panel-footer{
-    background:#ffffff00 !important;
+    background: #ffffff00 !important;
     position: fixed;
     bottom: 10px;
-    left: 10%;
+    left: 5%;
+    right: 5%
 }
 .panel-control>.btn:last-child, .panel-control>.btn-group:last-child>.btn:first-child {
     border-bottom-right-radius: 0;
@@ -352,7 +353,7 @@ label{
     align-items: center;
     justify-content: center;
 }
-.chat-body{
+#chat-body{
     height: 100vh;
 }
 
