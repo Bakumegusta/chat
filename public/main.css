@@ -354,7 +354,7 @@ label{
     justify-content: center;
 }
 #chat-body{
-    height: 100vh;
+    height: 89vh;
 }
 
 @media only screen and (max-width: 600px) {
