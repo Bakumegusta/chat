@@ -1,8 +1,23 @@
+! version = 2.0
+
++ hello bot
+- Hello human.
+
++ my name is *
+- <set name=<formal>>Nice to meet you, <get name>.
+
++ (what is my name|who am i)
+- You're <get name>, right?
+
++ *
+- I don't have a reply for that.
+- Try asking that a different way.
 
 + good *
 - <set name=<formal>>good <get name>.
+
 // project collaberation flow
-+ project collaboration
++ [*] (project collaboration|work with us|work with me|lets work together) [*]
 - Are you looking for project collaberation?{topic=projectcollab}
 ^ <li class=" yesno">yes</li>
 ^ <li  class=" yesno">no</li>
@@ -24,7 +39,7 @@
 // project collaberation flow end
 
 // app development flow
-+ app development
++ [*] (app development|software delopement|develop app|develop an app) [*]
 - Do you want me to develop new  App for you?{topic=appdevelop}
 ^ <li class=" yesno">yes</li>
 ^ <li  class=" yesno">no</li>
@@ -57,7 +72,7 @@
 // app development flow end
 
 // app development flow
-+ web development
++ [*] (web development|website development|website) [*]
 - Do you want me to develop and new website for you?{topic=webdevelop}
 ^ <li class=" yesno">yes</li>
 ^ <li  class=" yesno">no</li>
@@ -89,7 +104,38 @@
 
 // app development flow end
 
+// app development flow
++ [*] (bot development|chatbot development|chatbot design|chatbot) [*]
+- Do you want me to develop and new chatbot for your website?{topic=chatdevelop}
+^ <li class=" yesno">yes</li>
+^ <li  class=" yesno">no</li>
 
+> topic chatdevelop
+	+ yes
+	- What is your expected delivery?{topic=delivery}
+	^ <li class=" yesno">2 weeks</li>
+    ^ <li  class=" yesno">1 month</li>
+    ^ <li class=" yesno">2 months</li>
+    ^ <li  class=" yesno">3 months</li>
+	+ no
+	- Do you have existing chatbot that needs modifications or enhancement?{topic=modification}
+	^ <li class=" yesno">yes</li>
+	^ <li  class=" yesno">no</li>
+
+< topic
+> topic delivery
+	+ (2 weeks|1 month|2 months|3 months)
+	- <p>What is your budget?</p>{topic=budget}
+	^ (note: please mentions your currencies after the digits.)
+< topic
+> topic budget
+	+ *
+	- Thank you :)
+	^ <p> I'll  will get back to you soon</p>
+	^ Is there anything else I can help you with?{topic=random}
+< topic
+
+// app development flow end
 
 // modification flow
 > topic modification
@@ -115,7 +161,8 @@
 	^ Is there anything else I can help you with?{topic=random}
 < topic
 // modification end
-
++ [*] (the machine|machine|robot) [*]
+- How do you know about the machine!?
 
 
 
