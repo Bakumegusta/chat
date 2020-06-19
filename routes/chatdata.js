@@ -20,7 +20,6 @@ router.post('/', async (req, res) => {
   const chatdata = new Chatdata({
     name: req.body.name,
     email: req.body.email,
-    intent: req.body.intent,
     query: req.body.user,
     answer: req.body.answer,
     sessionID: req.body.sessionID

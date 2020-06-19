@@ -9,10 +9,6 @@ const chatdata = new mongoose.Schema({
     type: String,
     required: true
   },
-  intent: {
-    type: String,
-    required: true
-  },
  query: {
     type: String,
     required: true

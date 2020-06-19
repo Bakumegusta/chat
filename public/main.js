@@ -4,7 +4,6 @@ $(document).ready(function() {
         var element = document.querySelector(".nano-content");
         element.scrollTop = element.scrollHeight;
     }
-    let intent = "icrew v4";
     let name;
     let email;
     var id = getRandomInt(0, Date.now());
@@ -132,7 +131,7 @@ $(document).ready(function() {
                 // console.log(pos,poss);
                  answer = reply.slice(pos,poss);
                 //  console.log(answer);
-                data = ({intent:intent,user:user,answer:answer,date:date,sessionID:sessionID,name:name,email:email});
+                data = ({user:user,answer:answer,date:date,sessionID:sessionID,name:name,email:email});
                 // console.log(data);
                 // data.forEach((data)=>console.log(data));
                 // console.log(data);
