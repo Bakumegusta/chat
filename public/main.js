@@ -96,16 +96,34 @@ $(document).ready(function() {
                                     </div>
                                 </div>
                                 `;
-            bot.innerHTML = `
-                            <div class="media-left">
-                                <img src="botavatar.png" class="img-circle img-m" alt="Profile Picture">
-                            </div>
-                            <div class="media-body pad-hor">
-                                <div class="speech">
-                                    <p>${reply}</p
-                                </div>                      
-                            </div>
-                             `;
+                                if(reply == "undefined"){
+                                    bot.innerHTML = `
+                                    <div class="media-left">
+                                        <img src="botavatar.png" class="img-circle img-m" alt="Profile Picture">
+                                    </div>
+                                    <div class="media-body pad-hor">
+                                        <div class="speech">
+                                            <p>Sorry :) I could not understand </p
+                                            <p>Please rephrase or choose one of the options below.</p>
+                                            <li class=" yesno">App Development</li>
+                                            <li  class=" yesno">Web Development</li>
+                                            <li  class=" yesno">Chatbot Development</li>
+                                        </div>                      
+                                    </div>
+                                     `;
+                                }else{
+                                    bot.innerHTML = `
+                                    <div class="media-left">
+                                        <img src="botavatar.png" class="img-circle img-m" alt="Profile Picture">
+                                    </div>
+                                    <div class="media-body pad-hor">
+                                        <div class="speech">
+                                            <p>${reply}</p
+                                        </div>                      
+                                    </div>
+                                     `;
+                                }
+      
                                  
             x.play();
             // console.log(query);

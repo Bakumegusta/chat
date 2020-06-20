@@ -10,8 +10,8 @@
 - You're <get name>, right?
 
 + *
-- I don't have a reply for that.
-- Try asking that a different way.
+- undefined
+
 
 + good *
 - <set name=<formal>>good <get name>.
@@ -93,7 +93,9 @@
 > topic delivery
 	+ (2 weeks|1 month|2 months|3 months)
 	- <p>What is your budget?</p>{topic=budget}
-	^ (note: please mentions your currencies after the digits.)
+	^ <p>(note: please mentions your currencies after the digits)</p><br>
+	^ <p>(EX: 1234$ or 1234 dollars)</p>
+	^ <p>(EX: 1234rs or 1234 rupees)</p>
 < topic
 > topic budget
 	+ *
@@ -126,7 +128,10 @@
 > topic delivery
 	+ (2 weeks|1 month|2 months|3 months)
 	- <p>What is your budget?</p>{topic=budget}
-	^ (note: please mentions your currencies after the digits.)
+	^ <p>(note: please mentions your currencies after the digits)</p><br>
+	^ <p>(EX: 1234$ or 1234 dollars)</p>
+	^ <p>(EX: 1234rs or 1234 rupees)</p>
+
 < topic
 > topic budget
 	+ *
@@ -151,7 +156,10 @@
 < topic
 > topic delivery
 	+ (3 weeks|3 months|6 months|9 months)
-	- What is your budget?{topic=budget}
+	- <p>What is your budget?</p>{topic=budget}
+	^ <p>(note: please mentions your currencies after the digits)</p><br>
+	^ <p>(EX: 1234$ or 1234 dollars)</p>
+	^ <p>(EX: 1234rs or 1234 rupees)</p>
 
 < topic
 > topic budget

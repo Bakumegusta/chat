@@ -1,3 +1,4 @@
+
 getchat();
 async function getchat(){
     const response = await fetch('/chatdata');
