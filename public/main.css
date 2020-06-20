@@ -19,7 +19,7 @@ body{
     color: #c3c3b9;
     position: absolute;
     top: 40px !important;
-    left: 90px;
+    left: 70px;
     font-size: 10px;
 }
 .mainbody{
@@ -301,8 +301,8 @@ p{
 }
 .avatar{
     position: absolute;
-    margin-left: 20px;
-    margin-top: 0px;
+    margin-left: 0px;
+    margin-top: px;
 }
 
 .list-group li{
