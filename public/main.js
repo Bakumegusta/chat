@@ -192,23 +192,23 @@ $(document).ready(function() {
       }
 
     //   get name and email
-    $('.snip1582').on("click",function(e){
-        e.preventDefault();
-        name = document.querySelector('#name').value;
-        email = document.querySelector('#email').value;
-        if(name == '' || email == ''){
-            $('.banned').show();
-            setTimeout(function(){
-                $('.banned').hide();             
-                    },3000);
-        }else{
-            // console.log(name);
-            // console.log(email);
-            $('.requirementform').hide();
-            $('.panel-footer').css("visibility","visible");
-        }
+    // $('.snip1582').on("click",function(e){
+    //     e.preventDefault();
+    //     name = document.querySelector('#name').value;
+    //     email = document.querySelector('#email').value;
+    //     if(name == '' || email == ''){
+    //         $('.banned').show();
+    //         setTimeout(function(){
+    //             $('.banned').hide();             
+    //                 },3000);
+    //     }else{
+    //         // console.log(name);
+    //         // console.log(email);
+    //         $('.requirementform').hide();
+    //         $('.panel-footer').css("visibility","visible");
+    //     }
          
-    })
+    // })
          
 });
 
