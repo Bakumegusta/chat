@@ -16,7 +16,7 @@ async function getchat(){
                     <td>${data.query}</td>
                     <td>${data.answer}</td>
                     <td>${data.sessionID}</td>                 
-                    <td ><button class ='session option' value ="${data.sessionID}" onclick="conversation(this.value)"> view chat</button></td>  
+                    <td ><button class ='session option' value ="${data.sessionID}" onclick="conversation(this.value)"> view </button></td>  
                     `;
                     chatparent.append(tr);
     })

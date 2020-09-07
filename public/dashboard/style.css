@@ -8,6 +8,10 @@ body {
   font-size: 14px;
   line-height: inherit;
 }
+.center{
+  display: flex;
+  align-items: center;
+}
 .navbar-brand{
   display: inline-block;
     padding-top: .3125rem;
